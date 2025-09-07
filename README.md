@@ -20,7 +20,7 @@ The frontend communicates with the backend microservices through the **gateway-s
 ## Screenshots
 
 ### Login Page
-![Login Page](./account-management-client/login.png)
+![Login Page](./account-management-client/loginPage.png)
 
 ### Register Page
 ![Register Page](./account-management-client/register.png)
