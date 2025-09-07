@@ -1,0 +1,107 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: bank-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 456
+      POSTGRES_DB: BankManagementSystem
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bank-net
+
+#  config-service:
+#    build: ./config-service
+#    container_name: config-service
+#    ports:
+#      - "8888:8888"
+#    depends_on:
+#      - postgres
+#    networks:
+#      - bank-net
+
+  discovery-service:
+    build: ./discovery-service
+    container_name: discovery-service
+    ports:
+      - "8761:8761"
+    networks:
+      - bank-net
+
+  gateway-service:
+    build: ./gateway-service
+    container_name: gateway-service
+    ports:
+      - "8085:8085"   # only gateway is exposed to host
+    depends_on:
+      - discovery-service
+    networks:
+      - bank-net
+
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 456
+    depends_on:
+      - postgres
+      - discovery-service
+#      - config-service
+    networks:
+      - bank-net
+
+  account-service:
+    build: ./account-service
+    container_name: account-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 456
+    depends_on:
+      - postgres
+      - discovery-service
+#      - config-service
+    networks:
+      - bank-net
+
+  customer-service:
+    build: ./customer-service
+    container_name: customer-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 456
+    depends_on:
+      - postgres
+      - discovery-service
+#      - config-service
+    networks:
+      - bank-net
+
+  transaction-service:
+    build: ./transaction-service
+    container_name: transaction-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 456
+    depends_on:
+      - postgres
+      - discovery-service
+#      - config-service
+    networks:
+      - bank-net
+
+volumes:
+  postgres_data:
+
+networks:
+  bank-net:
+    driver: bridge
