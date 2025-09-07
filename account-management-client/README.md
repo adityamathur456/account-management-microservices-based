@@ -20,16 +20,16 @@ The frontend communicates with the backend microservices through the **gateway-s
 ## Screenshots
 
 ### Login Page
-![Login Page](./images/login.png)
+![Login Page](login.png)
 
 ### Register Page
-![Register Page](./images/register.png)
+![Register Page](register.png)
 
 ### Account Registration Page
-![Account Registration](./images/account-register.png)
+![Account Registration](account-register.png)
 
 ### Dashboard
-![Dashboard](./images/dashboard.png)
+![Dashboard](dashboard.png)
 
 > Replace the paths with actual images of your application.
 
