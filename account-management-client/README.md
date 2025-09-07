@@ -1,9 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Account Management System - Frontend
+
+This is the **frontend client application** for the **Account Management System**, built with **Next.js**.  
+It connects to the backend microservices implemented in **Spring Boot**, providing a seamless interface to manage bank accounts and transactions.
+
+---
+
+## Features
+
+- **Login** – Secure authentication via `auth-service`.
+- **Register** – Create new users and register customer profiles.
+- **Account Registration** – Open new bank accounts through `account-service`.
+- **Dashboard** – View account details, balance, and transaction history.
+- **Transactions** – Transfer funds to active accounts using `transaction-service`.
+
+The frontend communicates with the backend microservices through the **gateway-service** and relies on the **Spring Boot microservices** for all data operations.
+
+---
+
+## Screenshots
+
+### Login Page
+![Login Page](./images/login.png)
+
+### Register Page
+![Register Page](./images/register.png)
+
+### Account Registration Page
+![Account Registration](./images/account-register.png)
+
+### Dashboard
+![Dashboard](./images/dashboard.png)
+
+> Replace the paths with actual images of your application.
 
 ## Getting Started
 
-First, run the development server:
+### Install Dependencies
 
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+# or
+bun install
+```
+
+## Run Development Server
 ```bash
 npm run dev
 # or
@@ -14,23 +58,13 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Open http://localhost:3000
+- in your browser to view the frontend.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- The frontend requires the backend microservices which is insides account-management-system to be running via Docker.
 
-## Learn More
+- Ensure the gateway-service is accessible at the expected API endpoints for full functionality.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All transactions and account operations are performed through the backend microservices.
