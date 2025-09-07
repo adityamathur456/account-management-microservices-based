@@ -68,3 +68,96 @@ bun dev
 - Ensure the gateway-service is accessible at the expected API endpoints for full functionality.
 
 - All transactions and account operations are performed through the backend microservices.
+
+
+# Account Management System - Backend Microservices Architecture
+
+This project is a **microservices-based Account Management System** built using **Spring Boot**. The system includes the following services:
+
+- **account-service** – Manages bank accounts.
+- **auth-service** – Handles authentication and authorization.
+- **gateway-service** – API gateway routing requests to microservices.
+- **customer-service** – Manages customer information.
+- **transaction-service** – Handles banking transactions.
+- **discovery-service** – Service discovery for all microservices.
+
+The project is designed to run **entirely via Docker** using a single `docker-compose.yml` file. Each microservice is containerized and orchestrated with Docker.
+
+---
+
+## ⚠️ Important Note
+
+> This project is **designed to run only in Docker**. Running microservices individually without Docker is not supported. Ensure you have **Docker Desktop installed** before proceeding.
+
+---
+
+## Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+- Java 21+
+
+---
+
+## Project Structure
+account-management-system/
+- ├─ account-service/
+- ├─ auth-service/
+- ├─ gateway-service/
+- ├─ customer-service/
+- ├─ transaction-service/
+- ├─ discovery-service/
+- ├─ docker-compose.yml
+- └─ README.md
+
+
+---
+
+## Steps to Build and Run
+
+### 1. Build Spring Boot JARs
+### ensure you have maven install in your system
+- From the root folder, run:
+```bash
+# Build all Spring Boot services
+mvn clean install
+mvn clean package
+```
+
+## Build Docker Images
+- From the root folder, run:
+```bash
+docker-compose build
+```
+- This command will build Docker images for all microservices.
+
+## Run All Services via Docker
+### Start all microservices at once:
+```bash
+docker-compose up -d
+```
+### To stop all services:
+```bash
+docker-compose down
+```
+
+## Accessing Services
+
+### Gateway API – http://localhost:8085
+
+### Discovery Service – http://localhost:8761
+
+### Other microservices are accessed via gateway routes.
+
+
+## Notes
+
+### Ensure no other applications are running on ports 8085 or 8761 to avoid conflicts.
+
+### All microservices are automatically registered with discovery-service.
+
+### Docker must be running before starting the project.
+
+
+
+
+
