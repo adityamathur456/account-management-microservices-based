@@ -55,7 +55,6 @@ mvn clean install -DskipTests
 - The final .jar will be generated in the target/ folder.
 ### Note:
 - Without the -DskipTests command, the project shows errors because the ports and configurations are set up only for Docker. If you want to run it without Docker, you need to update the ports (including PostgreSQL) in the application.yml.
-- 
 ## Build Docker Images
 - From the root folder, run:
 ```bash
