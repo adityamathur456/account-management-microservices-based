@@ -117,6 +117,7 @@ mvn clean install -DskipTests
 - Without the -DskipTests command, the project shows errors because the ports and configurations are set up only for Docker. If you want to run it without Docker, you need to update the ports (including PostgreSQL) in the application.yml.
   
 ## Build Docker Images
+- First, open the Docker Desktop application and make sure it is running before you execute any Docker commands.
 - From the root folder, run:
 ```bash
 docker-compose build
