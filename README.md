@@ -107,9 +107,12 @@ account-management-system/
 - From the root folder, run:
 ```bash
 # Build all Spring Boot services
-mvn clean install
-mvn clean package
+mvn clean install -DskipTests
 ```
+### Meaning:
+- -DskipTests = tells Maven to compile code and build the JAR but skip running tests. run part is skip
+- The code is still compiled, but test cases are not executed.
+- The final .jar will be generated in the target/ folder.
 
 ## Build Docker Images
 - From the root folder, run:
