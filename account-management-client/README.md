@@ -39,23 +39,11 @@ The frontend communicates with the backend microservices through the **gateway-s
 
 ```bash
 npm install
-# or
-yarn
-# or
-pnpm install
-# or
-bun install
 ```
 
 ## Run Development Server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 - Open http://localhost:3000
