@@ -110,10 +110,12 @@ account-management-system/
 mvn clean install -DskipTests
 ```
 ### Meaning:
-- -DskipTests = tells Maven to compile code and build the JAR but skip running tests. run part is skip
+- -DskipTests = tells Maven to compile code and build the JAR but skip running tests. run part is skip 
 - The code is still compiled, but test cases are not executed.
 - The final .jar will be generated in the target/ folder.
-
+### Note:
+- Without the -DskipTests command, the project shows errors because the ports and configurations are set up only for Docker. If you want to run it without Docker, you need to update the ports (including PostgreSQL) in the application.yml.
+  
 ## Build Docker Images
 - From the root folder, run:
 ```bash
