@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://postgres:5432/BankManagementSystem
     username: postgres
-    password: 456
+    password: YOUR_PASSWORD
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -22,7 +22,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          secret-key: "a3a9b7cbe55a42fd83cf1b7df3e9e7f178fd3a07b2d6f4cbb31f2d47ac982bd0"
+          secret-key: "YOUR_SECRET_KEY"
 
 eureka:
   client:
