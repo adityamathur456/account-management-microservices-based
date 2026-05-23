@@ -6,7 +6,7 @@ services:
     container_name: bank-postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "SETUP_YOUR_PASSWORD"
+      POSTGRES_PASSWORD: 456
       POSTGRES_DB: BankManagementSystem
     ports:
       - "5432:5432"
@@ -49,7 +49,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: "YOUR_PASSWORD"
+      SPRING_DATASOURCE_PASSWORD: 456
     depends_on:
       - postgres
       - discovery-service
@@ -63,7 +63,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: "YOUR_PASSWORD"
+      SPRING_DATASOURCE_PASSWORD: 456
     depends_on:
       - postgres
       - discovery-service
@@ -77,7 +77,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: "YOUR_PASSWORD"
+      SPRING_DATASOURCE_PASSWORD: 456
     depends_on:
       - postgres
       - discovery-service
@@ -91,7 +91,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/BankManagementSystem
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: "YOUR_PASSWORD"
+      SPRING_DATASOURCE_PASSWORD: 456
     depends_on:
       - postgres
       - discovery-service
