@@ -7,11 +7,20 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+
+# Intellij IDEA generated files
+.idea/
+*.iml
 
 # Eclipse m2e generated files
 # Eclipse Core
 .project
+
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# vscode generated files
+.vscode/
