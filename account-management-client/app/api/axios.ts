@@ -2,13 +2,13 @@ import axios, { InternalAxiosRequestConfig } from "axios";
 
 // Create main API instance
 export const api = axios.create({
-  baseURL: "http://34.60.148.162:8085/api",
+  baseURL: "http://localhost:8085/api",
   headers: { "Content-Type": "application/json" },
 });
 
 // Create auth API instance
 export const authApi = axios.create({
-  baseURL: "http://34.60.148.162:8085/auth",
+  baseURL: "http://localhost:8085/auth",
   headers: { "Content-Type": "application/json" },
 });
 
