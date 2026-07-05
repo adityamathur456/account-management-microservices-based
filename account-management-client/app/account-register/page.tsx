@@ -22,9 +22,11 @@ export default function AccountRegister() {
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
 
-  const userName = sessionStorage.getItem("userName")
-  const token = sessionStorage.getItem("token")
+  
   useEffect(() => {
+    const userName = sessionStorage.getItem("userName")
+    const token = sessionStorage.getItem("token")
+
     if(!userName || !token){
         router.push("/register")
         return
@@ -36,7 +38,7 @@ export default function AccountRegister() {
     } else {
       setError("Customer ID not found. Please complete customer registration first.")
     }
-  }, [])
+  }, [router])
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
